@@ -3,745 +3,559 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professeur Mathieu Kirongozi - Recteur UNIKIS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:ital@0;1&family=Montserrat:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Site web officiel professeur Mathieu Kirongozi "l'okapi blanc" - Intégration Automatique</title>
     <style>
-        :root {
-            --playfair: 'Playfair Display', serif;
-            --lora: 'Lora', serif;
-            --montserrat: 'Montserrat', sans-serif;
-            --open-sans: 'Open Sans', sans-serif;
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #f8f9fa;
-            --dark: #2c3e50;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: var(--open-sans);
-            line-height: 1.6;
-            color: #333;
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        #navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        #navbar.scrolled {
-            padding: 0.5rem 0;
-            background: rgba(255, 255, 255, 0.98);
-        }
-
-        #navbar ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        #navbar li {
-            margin: 0 1rem;
-        }
-
-        #navbar a {
-            font-family: var(--montserrat);
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-            padding: 0.5rem 0;
-            display: block;
-        }
-
-        #navbar a:hover,
-        #navbar a.active {
-            color: var(--secondary);
-        }
-
-        /* Sections */
-        section {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 5rem 0;
-            display: flex;
-            align-items: center;
+            padding: 20px;
         }
 
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
-        /* Section Accueil */
-        #accueil {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
+            padding: 30px;
             text-align: center;
         }
 
-        .background-zoom {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/background-unikis.jpg');
-            background-size: cover;
-            background-position: center;
-            animation: zoomEffect 20s infinite alternate;
-            z-index: -1;
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
 
-        @keyframes zoomEffect {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
         }
 
-        #accueil .content {
-            max-width: 800px;
-            padding: 2rem;
-            background: rgba(0,0,0,0.5);
+        .main-content {
+            padding: 40px;
+        }
+
+        .input-section {
+            background: #f8f9fa;
+            padding: 30px;
             border-radius: 10px;
+            margin-bottom: 30px;
+            border: 2px dashed #dee2e6;
         }
 
-        #accueil h1 {
-            font-family: var(--playfair);
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        .input-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
-        #accueil p {
-            font-family: var(--lora);
-            font-size: 1.5rem;
-            font-style: italic;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background: var(--secondary);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: var(--montserrat);
-            font-weight: 600;
+        .url-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
             transition: all 0.3s ease;
         }
 
-        .btn:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .url-input:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
         }
 
-        /* Sections de contenu */
-        .content-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .content-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .content-section h2 {
-            font-family: var(--playfair);
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--dark);
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .content-section h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background: var(--secondary);
-        }
-
-        .content-section p {
-            font-family: var(--open-sans);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        /* Section Biographie */
-        #biographie {
-            background: white;
-        }
-
-        .bio-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .bio-image {
-            flex: 1;
-            max-width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .bio-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .bio-text {
-            flex: 2;
-        }
-
-        /* Section Discours */
-        #discours {
-            background: var(--light);
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* Ratio 16:9 */
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .embed-button {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
             border: none;
-        }
-
-        /* Section Agenda */
-        #agenda {
-            background: white;
-        }
-
-        .agenda-item {
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .agenda-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .agenda-item h3 {
-            font-family: var(--montserrat);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .agenda-item .date {
-            font-family: var(--montserrat);
-            color: var(--secondary);
+            border-radius: 50px;
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .agenda-item a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .agenda-item a:hover {
-            color: var(--accent);
-            text-decoration: underline;
-        }
-
-        /* Section Vision */
-        #vision {
-            background: var(--light);
-        }
-
-        .vision-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .vision-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .vision-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .vision-item h3 {
-            font-family: var(--montserrat);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .vision-item i {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        /* Section Déclarations */
-        #declarations {
-            background: white;
-        }
-
-        .declaration-item {
-            border-left: 4px solid var(--secondary);
-            padding-left: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .declaration-item h3 {
-            font-family: var(--montserrat);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .declaration-item .date {
-            font-family: var(--montserrat);
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Section Galerie */
-        #galerie {
-            background: var(--light);
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
             cursor: pointer;
-            aspect-ratio: 4/3;
+            transition: all 0.3s ease;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+        .embed-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 184, 148, 0.3);
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-item .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
+        .quick-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-
-        .gallery-item .overlay i {
-            color: white;
-            font-size: 2rem;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-img {
-            max-width: 90%;
-            max-height: 80%;
-            object-fit: contain;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            z-index: 2001;
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            padding: 1rem;
-            z-index: 2001;
-        }
-
-        .lightbox-prev {
-            left: 30px;
-        }
-
-        .lightbox-next {
-            right: 30px;
-        }
-
-        .lightbox-caption {
-            color: white;
-            margin-top: 1rem;
-            font-family: var(--montserrat);
-            text-align: center;
-        }
-
-        /* Section Contact */
-        #contact {
-            background: white;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-family: var(--montserrat);
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: var(--open-sans);
-            font-size: 1rem;
-            transition: border 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--secondary);
-            outline: none;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .submit-btn {
-            background: var(--secondary);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: var(--montserrat);
-            font-size: 1rem;
-            transition: background 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: #2980b9;
-        }
-
-        .submit-btn:disabled {
-            background: #95a5a6;
-            cursor: not-allowed;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
+            gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
-        .footer-links a {
+        .platform-btn {
+            padding: 8px 16px;
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 20px;
+            color: #3498db;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .platform-btn:hover {
+            background: #3498db;
             color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--secondary);
+        .results-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
-        .language-switcher {
-            margin-top: 1rem;
+        .media-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
-        .language-switcher a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 600;
+        .media-card:hover {
+            transform: translateY(-5px);
         }
 
-        /* Messages de confirmation */
-        .message {
+        .media-preview {
+            background: #f8f9fa;
+            padding: 20px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .embed-responsive {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+
+        .embed-responsive iframe,
+        .embed-responsive video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .media-info {
             padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: 600;
-            display: none;
+            border-top: 1px solid #e9ecef;
         }
 
-        .message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        .loading {
+        .media-platform {
             display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid #ffffff;
-            border-radius: 50%;
-            border-top-color: transparent;
-            animation: spin 1s ease-in-out infinite;
-            margin-right: 10px;
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .media-url {
+            color: #6c757d;
+            font-size: 14px;
+            word-break: break-all;
         }
 
-        /* Responsive */
+        .error-message {
+            background: #ffeaa7;
+            color: #e17055;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #e17055;
+            margin: 10px 0;
+        }
+
+        .success-message {
+            background: #55efc4;
+            color: #00b894;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #00b894;
+            margin: 10px 0;
+        }
+
+        .code-section {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .code-section h3 {
+            color: #74b9ff;
+            margin-bottom: 15px;
+        }
+
+        .embed-code {
+            background: #1e272e;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: #0984e3;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: #0767b3;
+        }
+
         @media (max-width: 768px) {
-            #navbar ul {
+            .input-group {
                 flex-direction: column;
-                text-align: center;
             }
             
-            #navbar li {
-                margin: 0.3rem 0;
+            .url-input {
+                border-radius: 10px;
             }
             
-            #accueil h1 {
-                font-size: 2.5rem;
+            .embed-button {
+                border-radius: 10px;
             }
             
-            #accueil p {
-                font-size: 1.2rem;
+            .results-section {
+                grid-template-columns: 1fr;
             }
             
-            section {
-                padding: 3rem 0;
+            .main-content {
+                padding: 20px;
             }
             
-            .bio-content {
-                flex-direction: column;
-                text-align: center;
+            .header h1 {
+                font-size: 1.8em;
             }
-            
-            .bio-image {
-                max-width: 200px;
-            }
-            
-            .content-section h2 {
-                font-size: 2rem;
-            }
-            
-            .lightbox-nav {
-                font-size: 20px;
-                padding: 0.5rem;
-            }
-            
-            .lightbox-prev {
-                left: 10px;
-            }
-            
-            .lightbox-next {
-                right: 10px;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <ul>
-            <li><a href="#accueil" class="active">Accueil</a></li>
-            <li><a href="#biographie">Biographie</a></li>
-            <li><a href="#discours">Discours & Vidéos</a></li>
-            <li><a href="#agenda">Agenda Scientifique</a></li>
-            <li><a href="#vision">Vision Stratégique</a></li>
-            <li><a href="#declarations">Déclarations</a></li>
-            <li><a href="#galerie">Galerie</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="index-en.html">English</a></li>
-        </ul>
-    </nav>
-
-    <!-- Section Accueil -->
-    <section id="accueil">
-        <div class="background-zoom"></div>
-        <div class="content fade-in">
-            <h1>Professeur Mathieu Kirongozi</h1>
-            <p>Recteur de l'Université de Kisangani (UNIKIS)</p>
-            <a href="#biographie" class="btn">Découvrir son parcours</a>
+    <div class="container">
+        <div class="header">
+            <h1>Site web officiel professeur Mathieu Kirongozi "l'okapi blanc"</h1>
+            <p>Intégrez automatiquement vos photos, images et vidéos en ligne</p>
         </div>
-    </section>
 
-    <!-- Section Biographie -->
-    <section id="biographie" class="content-section">
-        <div class="container">
-            <h2>Biographie</h2>
-            <div class="bio-content">
-                <div class="bio-image">
-                    <img src="images/professeur-kirongozi.jpg" alt="Professeur Mathieu Kirongozi">
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="text" id="mediaUrl" class="url-input" 
+                           placeholder="Collez votre lien YouTube, Vimeo, Instagram, TikTok, Image, Vidéo...">
+                    <button onclick="embedMedia()" class="embed-button">
+                        🔗 Intégrer le Média
+                    </button>
                 </div>
-                <div class="bio-text">
-                    <p>Le Professeur Mathieu Kirongozi est une figure éminente du monde académique congolais. Actuellement Recteur de l'Université de Kisangani (UNIKIS), il œuvre inlassablement pour le développement de l'enseignement supérieur et de la recherche scientifique en République Démocratique du Congo.</p>
-                    <p>Avec un parcours académique remarquable et une vision claire pour l'avenir de l'université, le Professeur Kirongozi s'engage à moderniser l'institution tout en préservant ses valeurs fondamentales d'excellence et d'intégrité.</p>
-                    <p>Sous sa direction, l'UNIKIS a entrepris d'importantes réformes visant à améliorer la qualité de l'enseignement, à renforcer la recherche scientifique et à accroître la visibilité internationale de l'université.</p>
+                
+                <div class="quick-links">
+                    <button class="platform-btn" onclick="setExample('youtube')">YouTube</button>
+                    <button class="platform-btn" onclick="setExample('vimeo')">Vimeo</button>
+                    <button class="platform-btn" onclick="setExample('instagram')">Instagram</button>
+                    <button class="platform-btn" onclick="setExample('tiktok')">TikTok</button>
+                    <button class="platform-btn" onclick="setExample('image')">Image</button>
+                    <button class="platform-btn" onclick="setExample('video')">Vidéo Directe</button>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Section Discours & Vidéos -->
-    <section id="discours" class="content-section">
-        <div class="container">
-            <h2>Discours & Vidéos</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Discours du Recteur" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div id="messageContainer"></div>
+
+            <div class="results-section" id="mediaResults">
+                <!-- Les médias intégrés apparaîtront ici -->
             </div>
-            <p>Extrait vidéo d'un discours du professeur Kirongozi lors d'un événement académique à Kisangani. Dans cette allocution, le Recteur partage sa vision pour l'université et souligne l'importance de l'innovation dans l'enseignement supérieur.</p>
-        </div>
-    </section>
 
-    <!-- Section Agenda Scientifique -->
-    <section id="agenda" class="content-section">
-        <div class="container">
-            <h2>Agenda Scientifique et Académique</h2>
-            <div class="agenda-item">
-                <h3>Mission à Kinshasa</h3>
-                <div class="date">Septembre 2023</div>
+            <div class="code-section">
+                <h3>📋 Code d'Intégration Généré</h3>
+                <div id="embedCodeDisplay" class="embed-code">
+                    Le code d'intégration apparaîtra ici après avoir ajouté un média...
+                </div>
+                <button onclick="copyEmbedCode()" class="copy-btn" id="copyButton">
+                    📋 Copier le Code
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class MediaEmbedder {
+            constructor() {
+                this.providers = {
+                    youtube: {
+                        name: "YouTube",
+                        regex: /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/,
+                        embed: (id, url) => `
+                            <div class="embed-responsive">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/${id}" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        `,
+                        code: (id, url) => `<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allowfullscreen></iframe>`
+                    },
+                    vimeo: {
+                        name: "Vimeo",
+                        regex: /vimeo\.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^\/]*)\/videos\/|)(\d+)(?:|\/\?)/,
+                        embed: (id, url) => `
+                            <div class="embed-responsive">
+                                <iframe 
+                                    src="https://player.vimeo.com/video/${id}" 
+                                    frameborder="0" 
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        `,
+                        code: (id, url) => `<iframe src="https://player.vimeo.com/video/${id}" width="640" height="360" frameborder="0" allowfullscreen></iframe>`
+                    },
+                    dailymotion: {
+                        name: "Dailymotion",
+                        regex: /dailymotion\.com\/(?:video|embed\/video)\/([^_]+)/,
+                        embed: (id, url) => `
+                            <div class="embed-responsive">
+                                <iframe 
+                                    src="https://www.dailymotion.com/embed/video/${id}" 
+                                    frameborder="0" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        `,
+                        code: (id, url) => `<iframe frameborder="0" width="480" height="270" src="https://www.dailymotion.com/embed/video/${id}" allowfullscreen></iframe>`
+                    },
+                    instagram: {
+                        name: "Instagram",
+                        regex: /instagram\.com\/(?:p|reel)\/([^\/\?]+)/,
+                        embed: (id, url) => `
+                            <div class="embed-responsive" style="padding-bottom: 125%;">
+                                <iframe 
+                                    src="https://www.instagram.com/p/${id}/embed/" 
+                                    frameborder="0" 
+                                    scrolling="no">
+                                </iframe>
+                            </div>
+                        `,
+                        code: (id, url) => `<iframe src="https://www.instagram.com/p/${id}/embed/" width="400" height="480" frameborder="0"></iframe>`
+                    },
+                    tiktok: {
+                        name: "TikTok",
+                        regex: /tiktok\.com\/@[\w.]+\/video\/(\d+)/,
+                        embed: (id, url) => `
+                            <div class="embed-responsive" style="padding-bottom: 130%;">
+                                <blockquote class="tiktok-embed" cite="${url}" data-video-id="${id}">
+                                    <section></section>
+                                </blockquote>
+                                <script async src="https://www.tiktok.com/embed.js"></script>
+                            </div>
+                        `,
+                        code: (id, url) => `
+                            <blockquote class="tiktok-embed" cite="${url}" data-video-id="${id}">
+                                <section></section>
+                            </blockquote>
+                            <script async src="https://www.tiktok.com/embed.js"></script>
+                        `
+                    },
+                    image: {
+                        name: "Image",
+                        regex: /\.(jpeg|jpg|gif|png|webp|bmp|svg)(?:\?.*)?$/i,
+                        embed: (url, fullUrl) => `
+                            <div style="text-align: center;">
+                                <img src="${fullUrl}" alt="Image intégrée" style="max-width: 100%; height: auto; border-radius: 8px;">
+                            </div>
+                        `,
+                        code: (url, fullUrl) => `<img src="${fullUrl}" alt="Image intégrée" width="800" height="auto">`
+                    },
+                    video: {
+                        name: "Vidéo Directe",
+                        regex: /\.(mp4|webm|ogg|mov|avi|wmv)(?:\?.*)?$/i,
+                        embed: (url, fullUrl) => `
+                            <div class="embed-responsive">
+                                <video controls style="width: 100%; border-radius: 8px;">
+                                    <source src="${fullUrl}" type="video/mp4">
+                                    Votre navigateur ne supporte pas la lecture vidéo.
+                                </video>
+                            </div>
+                        `,
+                        code: (url, fullUrl) => `
+                            <video width="800" height="450" controls>
+                                <source src="${fullUrl}" type="video/mp4">
+                                Votre navigateur ne supporte pas la lecture vidéo.
+                            </video>
+                        `
+                    }
+                };
+            }
+
+            detectProvider(url) {
+                for (const [providerKey, provider] of Object.entries(this.providers)) {
+                    const match = url.match(provider.regex);
+                    if (match) {
+                        return {
+                            key: providerKey,
+                            name: provider.name,
+                            id: providerKey === 'image' || providerKey === 'video' ? url : match[1],
+                            url: url,
+                            config: provider
+                        };
+                    }
+                }
+                return null;
+            }
+
+            generateEmbedCode(url) {
+                const detected = this.detectProvider(url);
+                
+                if (!detected) {
+                    throw new Error('❌ URL non supportée ou non reconnue. Plateformes supportées: YouTube, Vimeo, Dailymotion, Instagram, TikTok, Images, Vidéos directes.');
+                }
+
+                const embedHtml = detected.config.embed(detected.id, detected.url);
+                const rawCode = detected.config.code(detected.id, detected.url);
+
+                return {
+                    provider: detected.name,
+                    embedHtml: embedHtml,
+                    rawCode: rawCode,
+                    url: detected.url
+                };
+            }
+
+            isValidUrl(string) {
+                try {
+                    new URL(string);
+                    return true;
+                } catch (_) {
+                    return false;
+                }
+            }
+        }
+
+        // Instance globale
+        const embedder = new MediaEmbedder();
+        let currentEmbedCode = '';
+
+        function embedMedia() {
+            const urlInput = document.getElementById('mediaUrl');
+            const resultsDiv = document.getElementById('mediaResults');
+            const messageDiv = document.getElementById('messageContainer');
+            const codeDisplay = document.getElementById('embedCodeDisplay');
             
+            const url = urlInput.value.trim();
+            
+            // Vider les messages précédents
+            messageDiv.innerHTML = '';
+            
+            if (!url) {
+                showMessage('Veuillez entrer une URL de média.', 'error');
+                return;
+            }
+            
+            if (!embedder.isValidUrl(url)) {
+                showMessage('Veuillez entrer une URL valide.', 'error');
+                return;
+            }
+            
+            try {
+                const result = embedder.generateEmbedCode(url);
+                
+                // Créer la carte média
+                const mediaCard = document.createElement('div');
+                mediaCard.className = 'media-card';
+                mediaCard.innerHTML = `
+                    <div class="media-preview">
+                        ${result.embedHtml}
+                    </div>
+                    <div class="media-info">
+                        <span class="media-platform">${result.provider}</span>
+                        <div class="media-url">${result.url}</div>
+                    </div>
+                `;
+                
+                // Ajouter à la section résultats
+                resultsDiv.appendChild(mediaCard);
+                
+                // Mettre à jour le code d'intégration
+                currentEmbedCode = result.rawCode;
+                codeDisplay.textContent = currentEmbedCode;
+                
+                // Afficher message de succès
+                showMessage(`✅ Média ${result.provider} intégré avec succès!`, 'success');
+                
+                // Vider le champ de saisie
+                urlInput.value = '';
+                
+            } catch (error) {
+                showMessage(error.message, 'error');
+            }
+        }
+
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('messageContainer');
+            const messageElement = document.createElement('div');
+            messageElement.className = type === 'error' ? 'error-message' : 'success-message';
+            messageElement.textContent = message;
+            messageDiv.appendChild(messageElement);
+            
+            // Supprimer le message après 5 secondes
+            setTimeout(() => {
+                messageElement.remove();
+            }, 5000);
+        }
+
+        function copyEmbedCode() {
+            if (!currentEmbedCode) {
+                showMessage('Aucun code à copier.', 'error');
+                return;
+            }
+            
+            navigator.clipboard.writeText(currentEmbedCode).then(() => {
+                const button = document.getElementById('copyButton');
+                const originalText = button.textContent;
+                button.textContent = '✅ Code copié!';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+                
+            }).catch(err => {
+                showMessage('Erreur lors de la copie: ' + err, 'error');
+      
